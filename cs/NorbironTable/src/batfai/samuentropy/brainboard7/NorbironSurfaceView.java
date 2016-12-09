@@ -349,7 +349,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
         NeuronBox r = null;
         float max = 10000, m;
 
-        for (NeuronBox nb : nodeBoxes) {
+        for (NeuronBox nb : new java.util.ArrayList<NeuronBox>(nodeBoxes)) {
 
             if ((m = d(nb.getX() + nb.getWidth() / 2, nb.getY() + nb.getHeight() / 2, x, y)) < max) {
                 max = m;
@@ -453,7 +453,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
             if ((newnow = System.currentTimeMillis()) - now > 100) {
 
-                for (NeuronBox nb : nodeBoxes) {
+                for (NeuronBox nb : new java.util.ArrayList<NeuronBox>(nodeBoxes)) {
                     nb.step();
                 }
 
