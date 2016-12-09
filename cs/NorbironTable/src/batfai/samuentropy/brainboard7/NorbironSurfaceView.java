@@ -333,7 +333,8 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
         } finally {
 
             if (canvas != null) {
-                surfaceHolder.unlockCanvasAndPost(canvas);
+                try{surfaceHolder.unlockCanvasAndPost(canvas);}
+                catch(Exception e){;}
             }
 
         }
@@ -457,7 +458,8 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
                     nb.step();
                 }
 
-                repaint();
+                try{repaint();}
+                catch(Exception e ){;}
 
                 now = newnow;
             }
